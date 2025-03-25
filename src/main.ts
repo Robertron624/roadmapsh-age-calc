@@ -1,5 +1,6 @@
 import "./style.css";
 import datepicker from "js-datepicker";
+import "js-datepicker/dist/datepicker.min.css";
 import { DateTime } from "luxon";
 
 function main() {
@@ -9,19 +10,32 @@ function main() {
 
   datepicker(".datepicker", {
     formatter: (input, date) => {
-      const value = date.toLocaleDateString();
-      input.value = value;
+      const formattedDate = DateTime.fromJSDate(date).toFormat("dd/MM/yyyy");
+      input.value = formattedDate;
     },
   });
 
   button?.addEventListener("click", () => {
     if (!result) return;
-    if (!input?.value) {
+    if (!input?.value || input?.value === "") {
       result.textContent = "Please select a valid date";
       return;
     }
 
-    const selectedBirthdate = DateTime.fromFormat(input?.value, "MM/dd/yyyy");
+    // Normalize the date by adding zeroes to the day and month
+    const dateParts = input.value.split("/");
+    if (dateParts.length !== 3) {
+      result.textContent = "Invalid date format. Please use dd/MM/yyyy";
+      return;
+    }
+
+    let [day, month, year] = dateParts;
+    day = day.padStart(2, "0");
+    month = month.padStart(2, "0");
+  
+    const normalizedDate = `${day}/${month}/${year}`;
+
+    const selectedBirthdate = DateTime.fromFormat(normalizedDate, "dd/MM/yyyy");
     if (!selectedBirthdate.isValid) {
       result.textContent = "Invalid date format. Please try again";
       return;
