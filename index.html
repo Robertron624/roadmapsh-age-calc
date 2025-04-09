@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,20 +8,20 @@
   </head>
   <body>
     <main>
-      <h1>
-        Age Calculator
-      </h1>
-      <h2>
-        Enter your birth date:
-      </h2>
+      <h1>Age Calculator</h1>
+      <h2>Enter your birth date:</h2>
       <section class="form-wrapper">
-        <input type="text" class="datepicker" placeholder="Select your birth date">
+        <label for="birth-date" class="sr-only"> Birth date </label>
+        <input
+          id="birth-date"
+          type="text"
+          class="datepicker"
+          placeholder="Select your birth date"
+        />
         <button id="calculate-age">Calculate Age</button>
         <p id="age-result" class="hidden">
           You are
-          <span>
-
-          </span>
+          <span> </span>
           old
         </p>
       </section>

@@ -44,12 +44,14 @@ function main() {
     }
 
     const today = DateTime.now();
-    const age = today.diff(selectedBirthdate, "years").years.toFixed(0);
+    const diff = today.diff(selectedBirthdate, ["years", "months"]);
+    const years = Math.floor(diff.years);
+    const months = Math.floor(diff.months);
 
     result.classList.remove("hidden");
 
     if (!resultSpan) return;
-    resultSpan.textContent = `${age} years`;
+    resultSpan.textContent = `${years} years and ${months} months`;
   });
 }
 
