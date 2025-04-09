@@ -11,13 +11,19 @@
       <h1>
         Age Calculator
       </h1>
-      <p>
-        Enter your birth year and we will calculate your age.
-      </p>
+      <h2>
+        Enter your birth date:
+      </h2>
       <section class="form-wrapper">
         <input type="text" class="datepicker" placeholder="Select your birth date">
         <button id="calculate-age">Calculate Age</button>
-        <p id="age-result"></p>
+        <p id="age-result" class="hidden">
+          You are
+          <span>
+
+          </span>
+          old
+        </p>
       </section>
     </main>
     <script type="module" src="/src/main.ts"></script>

@@ -1,5 +1,19 @@
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('./assets/fonts/ComicNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('./assets/fonts/ComicNeue-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
-  font-family: Helvetica, sans-serif, system-ui, Avenir, Arial;
+  font-family: 'Comic Neue', Helvetica, sans-serif, system-ui, Avenir, Arial;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -28,6 +42,14 @@ body {
   text-align: center;
 }
 
+input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
 /* Typography */
 
 h1,
@@ -37,8 +59,12 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-weight: 700;
   line-height: 1.2;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
 }
 
 ol,
@@ -47,4 +73,63 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  font: inherit;
+}
+
+/* Custom Styles */
+
+.hidden {
+  visibility: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: .5rem;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.datepicker {
+  margin-top: 1rem;
+  border: 2px solid #373535;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+#calculate-age{
+  margin-top: .25rem;
+  line-height: 24px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #373535;
+  color: #fff;
+  width: 100%;
+}
+
+#age-result {
+  margin-top: .5rem;
+  height: 2rem;
+}
+
+#age-result span {
+  font-weight: bold;
 }

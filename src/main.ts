@@ -7,6 +7,8 @@ function main() {
   const input = document.querySelector<HTMLInputElement>(".datepicker");
   const button = document.querySelector<HTMLButtonElement>("#calculate-age");
   const result = document.querySelector<HTMLDivElement>("#age-result");
+  const resultSpan = result?.querySelector<HTMLSpanElement>("span");
+
 
   datepicker(".datepicker", {
     formatter: (input, date) => {
@@ -43,7 +45,11 @@ function main() {
 
     const today = DateTime.now();
     const age = today.diff(selectedBirthdate, "years").years.toFixed(0);
-    result.textContent = `You are ${age} years old`;
+
+    result.classList.remove("hidden");
+
+    if (!resultSpan) return;
+    resultSpan.textContent = `${age} years`;
   });
 }
 
