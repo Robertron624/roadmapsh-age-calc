@@ -120,8 +120,22 @@ h2 {
   align-items: center;
 }
 
-.datepicker {
+.input-wrapper {
+  width: 100%;
+  position: relative;
   margin-top: 1rem;
+
+}
+
+.input-wrapper .icon-container {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.datepicker {
   border: 2px solid #373535;
   border-radius: 8px;
   padding: 0.5rem;

@@ -4,20 +4,56 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>
+      Age Calculator
+    </title>
+    
+    <!-- SEO -->
+    <meta name="description" content="A simple age calculator app." />
+    <meta name="keywords" content="age calculator, date picker, JavaScript" />
+    <meta name="author" content="Robert Ramirez" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Age Calculator" />
+    <meta property="og:description" content="A simple age calculator app." />
+    <meta property="og:image" content="/vite.svg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Age Calculator" />
   </head>
   <body>
     <main>
       <h1>Age Calculator</h1>
       <h2>Enter your birth date:</h2>
       <section class="form-wrapper">
-        <label for="birth-date" class="sr-only"> Birth date </label>
-        <input
-          id="birth-date"
-          type="text"
-          class="datepicker"
-          placeholder="Select your birth date"
-        />
+        <div class="input-wrapper">
+          <div class="icon-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-calendar"
+              width="24"
+              height="24"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <label for="birth-date" class="sr-only"> Birth date </label>
+          <input
+            id="birth-date"
+            type="text"
+            class="datepicker"
+            placeholder="Select your birth date"
+          />
+        </div>
         <button id="calculate-age">Calculate Age</button>
         <p id="age-result" class="hidden">
           You are

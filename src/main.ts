@@ -10,12 +10,15 @@ function main() {
   const resultSpan = result?.querySelector<HTMLSpanElement>("span");
 
 
-  datepicker(".datepicker", {
+  const datePickerElement = datepicker(".datepicker", {
     formatter: (input, date) => {
       const formattedDate = DateTime.fromJSDate(date).toFormat("dd/MM/yyyy");
       input.value = formattedDate;
     },
   });
+
+  // According to documentation, to style the calendar, we need to set the width of the calendar container
+  datePickerElement.calendarContainer.style.setProperty('width', '100%');
 
   button?.addEventListener("click", () => {
     if (!result) return;
